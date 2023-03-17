@@ -1,0 +1,74 @@
+/*รูป*/
+body {
+  font-family: 'Mali', cursive;
+  font-size: 20px; 
+  margin: 10px 50px; 
+  letter-spacing: 2px; 
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  background-image: url("./image/w2.png");
+  line-height: normal;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap; /* ใช้ flex-wrap เพื่อทำให้ขยับเป็นหลายบรรทัด */
+}
+
+.container__image {
+  display: flex;
+  flex-wrap: wrap; /* ใช้ flex-wrap เพื่อทำให้ขยับเป็นหลายบรรทัด */
+  justify-content: center; /* จัดให้รูปภาพอยู่ตรงกลาง */
+  align-items: center; /* จัดให้รูปภาพอยู่ตรงกลาง */
+}
+
+.container__image img {
+  width: 12.5rem; /* กำหนดขนาดของรูปภาพ */
+  height: 12.5rem; /* กำหนดขนาดของรูปภาพ */
+  margin: 5px; /* กำหนดระยะห่างของรูปภาพ */
+  border: 2px solid #0a7532; /* กำหนดเส้นขอบสำหรับรูปภาพ */
+  border-radius: 5px; /* กำหนดรูปทรงของมุมของเส้นขอบ */
+  transition: transform 0.5s ease; /* เพิ่มการเคลื่อนไหวเมื่อเมาส์ไปชี้ */
+}
+
+.container__image img:hover {
+  transform: scale(1.5); /* ขยายขนาดของรูปภาพเมื่อเมาส์ไปชี้ */
+}
+/*คัวหนังสือ*/
+p {
+  color: rgb(255, 255, 255);
+  background-color: #13e964;
+
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: clamp(2rem, 2.8vw, 5rem);
+  font-family: 'Mali', cursive;
+  font-weight: bold;
+}
+
+.typewriter {
+    width: 21.5ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 4px solid #212121;
+    animation: cursor 1s step-start infinite, 
+    text 5s steps(18) alternate infinite;
+}
+
+@keyframes cursor {
+    0%, 100% { 
+    border-color: #212121; 
+  }
+}
+
+@keyframes text {
+    0% { 
+    width: 0; 
+  }
+    100% { 
+    width: 21.5ch; 
+  }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NKN</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+
+ <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body class="d-flex h-100 text-center text-bg-dark">
+  
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+<header class="mb-auto">
+
+  <div>
+    <h3 class="float-md-start mb-0">I N D E X . H T M L</h3>
+    <nav class="nav nav-masthead justify-content-center float-md-end">
+      <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">หน้าหลัก</a>
+      <a class="nav-link fw-bold py-1 px-0" href="2.html">🎉อวยพร🎉</a>
+      <a class="nav-link fw-bold py-1 px-0" href="#">ยังไม่เปิด</a>
+    </nav>
+  </div>
+</header>
+<br>
+<main class="px-3">
+  <div class="logo">
+    <img src="./image/nkn.png" alt="fluke">
+    <br>
+    <h5>ขณะนี้เวลา</h5>
+<h2  id="clock"></h2>
+  <h4>ที่อยู่ไอพีของคุณคือ </h4><h4 id="ip"><h3></h3></>
+  <h1>ยินดีต้อนรับ</h1>
+  <p class="lead"> [เว็บอยู่ในช่วงทดสอบ]</p>
+  <p class="lead">
+    <a href="https://nkn202.000webhostapp.com/login.php" class="btn btn-lg btn-light fw-bold border-white bg-white">เข้าระบบ</a>
+  </p>
+</main>
+
+<footer class="mt-auto text-white-50">
+  <p>เขียนเว็บเชี้ยนี่โดย <a href="https://ln.ki/fluke" class="text-white">FLUKE NKN</a> ทำคนเดียวเหนื่อยมาก
+</footer>
+</div>
+
+<script>
+  window.onload = function() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "https://api.ipify.org", true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        document.getElementById("ip").innerHTML = xhr.responseText;
+      }
+    };
+    xhr.send();
+  };
+  function updateTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    hours = (hours < 10 ? "0" : "") + hours;
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+    document.getElementById("clock").innerHTML = hours + ":" + minutes + ":" + seconds;
+  }
+  setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>
